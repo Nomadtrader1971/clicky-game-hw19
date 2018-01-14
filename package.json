@@ -1,0 +1,36 @@
+{
+  "name": "clicky-game",
+  "author": "Abdel",
+  "version": "0.0.1",
+  "description": "Homework 19 with with React.js",
+  "dependencies": {
+    "envify": "^4.1.0",
+    "flux": "^3.1.3",
+    "lodash": "^4.17.4",
+    "object-assign": "^4.1.1",
+    "react": "^16.2.0",
+    "reactify": "^1.1.1",
+    "stylus": "^0.54.5",
+    "uglify-js": "^3.3.7",
+    "watchify": "^3.9.0"
+  },
+  "devDependencies": {
+    "browserify": "*",
+    "envify": "*",
+    "reactify": "*",
+    "uglify-js": "*",
+    "watchify": "*"
+  },
+  "main": "js/app.jsx",
+  "scripts": {
+    "start": "watchify -o js/bundle.js -v -d .",
+    "build": "NODE_ENV=production browserify . | uglifyjs -cm > js/bundle.min.js",
+    "test": "jest"
+  },
+  "browserify": {
+    "transform": [
+      "reactify",
+      "envify"
+    ]
+  }
+}
